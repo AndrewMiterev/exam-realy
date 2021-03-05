@@ -79,7 +79,7 @@ public class DataServiceImpl implements DataService {
 
     @Override
     public List<AssigmentsInDTO> filteredList(Integer minPrice, Integer maxPrice, Integer minBad, Integer maxBad, Integer minBath, Integer maxBath) {
-        log.debug("Filter minPrice %s maxPrice %s minBad %s maxBad %s minBath %s maxBath %s".formatted(minPrice, maxPrice,  minBad, maxBad , minBath , maxBath));
+        log.debug(String.format("Filter minPrice %s maxPrice %s minBad %s maxBad %s minBath %s maxBath %s",minPrice, maxPrice,  minBad, maxBad , minBath , maxBath));
         return list.stream()
                 .filter(d -> minPrice == null || d.getPrice() >= minPrice)
                 .filter(d -> maxPrice == null || d.getPrice() <= maxPrice)
